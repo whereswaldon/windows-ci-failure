@@ -12,5 +12,6 @@ jobs:
       - name: build executable
         shell: pwsh
         run: |
+          $ErrorActionPreference = 'Stop'
           go run . # this should fail, no source code
           true
