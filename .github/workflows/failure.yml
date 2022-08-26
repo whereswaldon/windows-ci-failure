@@ -10,7 +10,9 @@ jobs:
         with:
             go-version: '>=1.18.0' # The Go version to download (if necessary) and use.
       - name: build executable
-        shell: cmd
+        shell: pwsh
         run: |
-          go run . # this should fail, no source code
+          if (go run .) { # this should fail, no source code
+            exit 1
+          }
           true
