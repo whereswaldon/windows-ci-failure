@@ -12,7 +12,7 @@ jobs:
       - name: build executable
         shell: pwsh
         run: |
-          if (go run .) { # this should fail, no source code
+          if !(go run .) { # this should fail, no source code
             exit 1
           }
           true
