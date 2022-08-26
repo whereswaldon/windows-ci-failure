@@ -13,3 +13,4 @@ jobs:
         shell: pwsh
         run: |
           go run . # this should fail, no source code
+          true
