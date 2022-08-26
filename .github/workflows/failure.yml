@@ -13,7 +13,5 @@ jobs:
         shell: pwsh
         run: |
           go run .
-          if (-not ($?)) { # this should fail, no source code
-            exit 1
-          }
+          if (-not ($?)) { exit 1 }
           true
