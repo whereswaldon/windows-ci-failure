@@ -1,0 +1,15 @@
+name: compile all
+on: push
+jobs:
+  compile-windows:
+    name: Windows
+    runs-on: windows-latest
+    steps:
+      - name: install go
+        uses: actions/setup-go@v3
+        with:
+            go-version: '>=1.18.0' # The Go version to download (if necessary) and use.
+      - name: build executable
+        shell: pwsh
+        run: |
+          go run . # this should fail, no source code
